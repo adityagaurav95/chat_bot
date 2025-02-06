@@ -22,14 +22,9 @@ io.on("connection", (socket) => {
     console.log('User with ID: ${socket.id} joined room: ${data}');
   });
 
-//   socket.on("send_message", (data) => {
-//     socket.to(data.room).emit("receive_message", data);
-//   });
-socket.on("send_message", (data) => {
-    // Broadcast the original message to everyone in the room
-    // io.to(data.room).emit("receive_message", data);
 
-    // Create a system response
+socket.on("send_message", (data) => {
+
     const systemMessage = {
         room: data.room,
         sender: "System",
